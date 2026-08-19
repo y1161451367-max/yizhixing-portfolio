@@ -1,0 +1,142 @@
+:root {
+  --ink: #17211f;
+  --paper: #f7f8f6;
+  --aqua: #81cec4;
+  --pink: #ee806e;
+  --yellow: #d9ea84;
+  --line: #c7cdc9;
+}
+
+body { background: var(--paper); color: var(--ink); }
+.cursor-glow { display: none; }
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-content: center;
+  gap: 18px;
+  background: rgba(247, 248, 246, .96);
+  color: #17211f;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease;
+}
+.page-loader.is-loading { opacity: 1; pointer-events: auto; }
+.page-loader p { margin: 0; font: 10px var(--mono); letter-spacing: .12em; text-align: center; }
+.loader-cloud { position: relative; width: 84px; height: 46px; margin: 0 auto; border-radius: 44% 56% 48% 52%; background: #9ce0d6; box-shadow: inset -7px -7px 0 rgba(35, 110, 103, .22); animation: loader-float .8s ease-in-out infinite alternate; }
+.loader-cloud::before, .loader-cloud::after, .loader-cloud span { content: ''; position: absolute; border-radius: 50%; background: inherit; }
+.loader-cloud::before { width: 39px; height: 39px; left: 10px; top: -18px; }
+.loader-cloud::after { width: 32px; height: 32px; right: 11px; top: -13px; }
+.loader-cloud span { width: 5px; height: 7px; top: 19px; background: #236e67; left: 30px; box-shadow: 19px 0 #236e67; }
+.loader-cloud i { position: absolute; top: -25px; right: -13px; width: 8px; height: 8px; border-radius: 50%; background: #ee806e; animation: loader-spark .8s ease-out infinite; }
+@keyframes loader-float { to { transform: translateY(-7px) rotate(2deg); } }
+@keyframes loader-spark { to { transform: translate(8px, -8px); opacity: 0; } }
+.nav { background: rgba(247, 248, 246, .9); }
+.brand span { background: #17211f; color: #9ce0d6; }
+.nav-cta { padding: 10px 13px; background: #17211f; color: #fff; border-radius: 2px; }
+.nav-cta:hover { background: #2b7770; }
+
+.hero { padding-top: 72px; }
+.hero h1 { font-weight: 700; line-height: .98; }
+.hero h1 em { color: #236e67; }
+.hero-copy p { color: #46514e; }
+.hero-art {
+  background: #bcdfe4;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(23, 33, 31, .12);
+}
+.cloud-sticker { position: absolute; margin: 0; overflow: hidden; border: 4px solid #f7f8f6; border-radius: 50%; background: #d9ea84; box-shadow: 8px 9px 0 rgba(23, 33, 31, .18); transform: rotate(7deg); }
+.cloud-sticker img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.cloud-sticker-hero { right: 8%; bottom: 13%; width: 104px; height: 104px; animation: sticker-drift 5s ease-in-out infinite alternate; }
+@keyframes sticker-drift { to { transform: translateY(-10px) rotate(-3deg); } }
+.marquee { background: #17211f; color: #fff; }
+.marquee b { color: #d9ea84; }
+
+.intro { background: #f7f8f6; }
+.intro h2, .section-heading h2, .contact h2 { font-weight: 700; }
+.intro-content p { color: #46514e; }
+.numbers { border-color: #adb7b2; }
+.numbers div { border-color: #adb7b2; }
+.numbers div:nth-child(1) b { color: #236e67; }
+.numbers div:nth-child(2) b { color: #de6d5c; }
+.numbers div:nth-child(3) b { color: #52662c; }
+
+.work { background: #e9eeeb; }
+.work .eyebrow { color: #58635f; }
+.filters button.active { color: #236e67; border-color: #236e67; }
+.project-visual { border-radius: 2px; transition: transform .35s ease, box-shadow .35s ease; }
+.project-visual:hover { transform: translateY(-5px); box-shadow: 10px 12px 0 rgba(23, 33, 31, .14); }
+.project-visual .portfolio-asset { transition: transform .55s ease; }
+.project-visual:hover .portfolio-asset { transform: scale(1.035); }
+.project-meta h3 { font-size: 22px; font-weight: 700; }
+.project-meta p { color: #58635f; }
+.asset-label { left: 16px; bottom: 16px; background: #17211f; border-radius: 0; }
+.cloud-project { background: #bcdfe4; }
+.ai-project { background: #dfecea; }
+.brand-project { background: #f2f4ef; }
+.guide-project { background: #e98584; }
+
+.cloud-series {
+  grid-column: span 2;
+  margin-top: 12px;
+  padding-top: 34px;
+  border-top: 1px solid #aab4af;
+}
+.cloud-series-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 50px;
+  margin-bottom: 28px;
+}
+.cloud-series-head span { font: 11px var(--mono); color: #236e67; }
+.cloud-series-head h3 { margin: 9px 0 0; font-size: 34px; line-height: 1.2; }
+.cloud-series-head p { max-width: 510px; margin: 0; color: #58635f; line-height: 1.75; }
+.cloud-series-grid {
+  display: grid;
+  grid-template-columns: 1.06fr 1fr 1fr;
+  gap: 12px;
+}
+.cloud-series figure { margin: 0; min-width: 0; }
+.cloud-series img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background: #d8e8e8;
+}
+.cloud-series figcaption {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 2px 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+.cloud-series figcaption span { color: #7b8580; font: 10px var(--mono); }
+
+.timeline { border-color: #adb7b2; }
+.timeline article { border-color: #adb7b2; }
+.skills { background: #17211f; }
+.skills h2 em { color: #9ce0d6; }
+.skill-list span { color: #d9ea84; }
+.contact { position: relative; overflow: hidden; background: #f7f8f6; }
+.contact h2 { color: #17211f; }
+.cloud-sticker-contact { right: max(32px, calc((100vw - 1196px) / 2)); top: 115px; width: 112px; height: 112px; transform: rotate(-8deg); }
+.contact-bottom > a span, .contact-bottom button span { color: #236e67; font: 700 10px var(--mono); letter-spacing: .08em; }
+.contact-bottom button { transition: color .2s ease, transform .2s ease; }
+.contact-bottom button:hover { color: #236e67; transform: translateX(4px); }
+footer { background: #d9ea84; border: 0; }
+
+@media (max-width: 700px) {
+  .hero { padding-top: 44px; }
+  .cloud-sticker-hero { right: 6%; bottom: 15%; width: 74px; height: 74px; }
+  .cloud-series { grid-column: auto; padding-top: 25px; }
+  .cloud-series-head { grid-template-columns: 1fr; gap: 16px; }
+  .cloud-series-head h3 { font-size: 27px; }
+  .cloud-series-grid { grid-template-columns: 1fr; gap: 28px; }
+  .cloud-series img { aspect-ratio: 4 / 5; }
+  .nav-cta { padding: 8px 10px; }
+  .cloud-sticker-contact { right: 20px; top: 74px; width: 72px; height: 72px; }
+  .contact-bottom > a span, .contact-bottom button span { display: inline-block; min-width: 62px; }
+}

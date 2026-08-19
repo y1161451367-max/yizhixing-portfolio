@@ -1,0 +1,26 @@
+.portfolio-asset {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.project-visual:hover .portfolio-asset { transform: scale(1.035); }
+.cloud-project { background: #3a2520; }
+.cloud-asset { object-position: center 57%; }
+.ai-project { background: #eef8f6; }
+.ai-asset { object-fit: contain; padding: 12px; }
+.brand-project { background: #f7f7f3; }
+.brand-asset { object-fit: contain; padding: 18px; }
+.asset-label {
+  position: absolute;
+  left: 15px;
+  bottom: 14px;
+  padding: 7px 9px;
+  background: rgba(21, 25, 26, .78);
+  color: #fff;
+  font: 10px var(--mono);
+  letter-spacing: .08em;
+}
